@@ -136,7 +136,6 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-
         mLastGesture = ChartGesture.SINGLE_TAP;
 
         OnChartGestureListener l = mChart.getOnChartGestureListener();

@@ -720,7 +720,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         if (callListener && mSelectionListener != null) {
 
             if (!valuesToHighlight()) {
-                if (!isNonSelectMode) mSelectionListener.onNothingSelected();
+                if (!isReselectMode) mSelectionListener.onNothingSelected();
             } else {
                 // notify the listener
                 mSelectionListener.onValueSelected(e, high);
@@ -1830,18 +1830,18 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     /**
      * non select mode, don t use reselect pie
      */
-    private boolean isNonSelectMode = true;
+    private boolean isReselectMode = false;
 
     /**
      * Set non select mode
      *
      * @param enable
      */
-    public void setNonSelectMode(boolean enable) {
-        this.isNonSelectMode = enable;
+    public void setReselectMode(boolean enable) {
+        this.isReselectMode = enable;
     }
 
-    public boolean isNonSelectMode() {
-        return this.isNonSelectMode;
+    public boolean isReselectMode() {
+        return this.isReselectMode;
     }
 }
