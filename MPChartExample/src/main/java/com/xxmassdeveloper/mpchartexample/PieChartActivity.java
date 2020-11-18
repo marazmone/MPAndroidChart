@@ -8,7 +8,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.core.content.ContextCompat;
+
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
@@ -67,6 +69,7 @@ public class PieChartActivity extends DemoBase implements OnSeekBarChangeListene
         chart.setUsePercentValues(true);
         chart.getDescription().setEnabled(false);
         chart.setExtraOffsets(5, 10, 5, 5);
+        chart.useGradient(true);
 
         chart.setDragDecelerationFrictionCoef(0.95f);
 
@@ -121,7 +124,7 @@ public class PieChartActivity extends DemoBase implements OnSeekBarChangeListene
 
         // NOTE: The order of the entries when being added to the entries array determines their position around the center of
         // the chart.
-        for (int i = 0; i < count ; i++) {
+        for (int i = 0; i < count; i++) {
             entries.add(new PieEntry((float) ((Math.random() * range) + range / 5),
                     parties[i % parties.length],
                     getResources().getDrawable(R.drawable.star)));
@@ -319,8 +322,10 @@ public class PieChartActivity extends DemoBase implements OnSeekBarChangeListene
     }
 
     @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {}
+    public void onStartTrackingTouch(SeekBar seekBar) {
+    }
 
     @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {}
+    public void onStopTrackingTouch(SeekBar seekBar) {
+    }
 }

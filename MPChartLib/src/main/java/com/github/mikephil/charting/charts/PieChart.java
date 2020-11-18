@@ -750,6 +750,10 @@ public class PieChart extends PieRadarChartBase<PieData> {
         return mMaxAngle;
     }
 
+    public void useGradient(boolean enabled) {
+        ((PieChartRenderer) mRenderer).useGradient(enabled);
+    }
+
     /**
      * Sets the max angle that is used for calculating the pie-circle. 360f means
      * it's a full PieChart, 180f results in a half-pie-chart. Default: 360f
